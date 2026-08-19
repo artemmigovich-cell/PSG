@@ -1,5 +1,3 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 46" fill="none">
-  <text x="0" y="33" font-family="'Space Grotesk','Arial',sans-serif" font-size="30" font-weight="800" letter-spacing="0.5" fill="#ffffff">PSG</text>
-  <rect x="66" y="7" width="1.5" height="32" fill="#3f7fc1"/>
-  <text x="80" y="30" font-family="'Space Grotesk','Arial',sans-serif" font-size="14" font-weight="600" letter-spacing="2" fill="#9aa0a8">PROTECTIVE SECURITY GROUP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 34" fill="none">
+  <text x="0" y="24" font-family="'Space Grotesk','Arial',sans-serif" font-size="21" font-weight="700" letter-spacing="1.2" fill="#ffffff">PROTECTIVE SECURITY <tspan fill="#63a4e6">GROUP</tspan></text>
 </svg>
