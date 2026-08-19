@@ -82,6 +82,20 @@ h1,h2,h3,h4{
   margin:0 0 .6em;
   letter-spacing:.2px;
 }
+
+/* scanner-style hover sweep: a hard-edged wipe crosses the heading, leaving it blue */
+@supports ((background-clip: text) or (-webkit-background-clip: text)){
+  h1,h2,h3,h4{
+    color:transparent !important;
+    background-image:linear-gradient(90deg, #ffffff 0%, #ffffff 50%, var(--gold-bright) 50%, var(--gold-bright) 100%);
+    background-size:200% 100%;
+    background-position:0% 0;
+    -webkit-background-clip:text;
+    background-clip:text;
+    transition:background-position .5s cubic-bezier(.4,0,.2,1);
+  }
+  h1:hover,h2:hover,h3:hover,h4:hover{background-position:100% 0;}
+}
 p{margin:0 0 1em;color:var(--text-dim);}
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
