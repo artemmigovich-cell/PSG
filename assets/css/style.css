@@ -112,8 +112,8 @@ body{
 }
 .site-header.scrolled{background:rgba(8,10,13,0.96);box-shadow:0 8px 24px rgba(0,0,0,0.35);}
 .site-header.scrolled .container{height:62px;}
-.site-header.scrolled .logo img{height:44px;}
-.logo img{height:58px;width:auto;transition:height .25s ease;}
+.site-header.scrolled .logo img{height:30px;}
+.logo img{height:38px;width:auto;transition:height .25s ease;}
 .main-nav ul{display:flex;gap:2px;align-items:center;}
 .main-nav a{
   position:relative;
