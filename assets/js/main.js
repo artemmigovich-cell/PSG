@@ -19,6 +19,17 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* make whole service cards clickable, not just the "Learn More" link */
+  document.querySelectorAll('.card').forEach(function (card) {
+    var link = card.querySelector('a.card-link');
+    if (!link) return;
+    card.classList.add('card-clickable');
+    card.addEventListener('click', function (e) {
+      if (e.target.closest('a')) return; // let the real link handle its own click
+      window.location.href = link.href;
+    });
+  });
+
   /* mobile nav toggle */
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.main-nav');
