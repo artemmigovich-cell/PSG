@@ -104,12 +104,47 @@ body{
 .hero{
   position:relative;padding:150px 0 110px;overflow:hidden;
   border-bottom:1px solid var(--border);
+  background-size:cover;background-position:center;
 }
 .hero::before{
   content:"";position:absolute;inset:0;
   background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(63,127,193,0.14), transparent 70%);
   pointer-events:none;
 }
+.hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(10,14,20,0.86), rgba(10,14,20,0.96) 60%, var(--bg) 100%);
+  pointer-events:none;
+}
+.hero .container{position:relative;z-index:1;}
+
+.page-hero{background-size:cover;background-position:center;position:relative;}
+.page-hero::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, rgba(10,14,20,0.90), rgba(10,14,20,0.97) 70%, var(--bg) 100%);
+  pointer-events:none;
+}
+.page-hero .container{position:relative;z-index:1;}
+
+/* ---------- media / images ---------- */
+.card-media{
+  margin:-32px -32px 22px;height:180px;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.card-media img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease;}
+.card:hover .card-media img{transform:scale(1.06);}
+
+.img-frame{
+  position:relative;border:1px solid var(--border-strong);border-radius:var(--radius);
+  overflow:hidden;aspect-ratio:4/5;
+}
+.img-frame img{width:100%;height:100%;object-fit:cover;}
+.img-frame::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg, transparent 60%, rgba(10,14,20,0.6));
+  pointer-events:none;
+}
+.img-frame.wide{aspect-ratio:16/10;}
 .eyebrow{
   display:inline-flex;align-items:center;gap:10px;
   font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-bright);
