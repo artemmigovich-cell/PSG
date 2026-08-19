@@ -1,11 +1,11 @@
 :root{
-  --bg:#0a0c0f;
-  --bg-alt:#101318;
-  --bg-card:#14171d;
+  --bg:#0a0e14;
+  --bg-alt:#0f1620;
+  --bg-card:#131b26;
   --border:rgba(255,255,255,0.08);
   --border-strong:rgba(255,255,255,0.14);
-  --gold:#c9a227;
-  --gold-bright:#e8c14a;
+  --gold:#3f7fc1;
+  --gold-bright:#63a4e6;
   --red:#8a1c1c;
   --text:#eceef0;
   --text-dim:#9aa0a8;
@@ -41,8 +41,8 @@ ul{margin:0;padding:0;list-style:none;}
 /* subtle background grid texture */
 body{
   background-image:
-    linear-gradient(rgba(201,162,39,0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(201,162,39,0.035) 1px, transparent 1px);
+    linear-gradient(rgba(63,127,193,0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(63,127,193,0.045) 1px, transparent 1px);
   background-size:48px 48px;
   background-position:center top;
 }
@@ -67,7 +67,7 @@ body{
   border-radius:var(--radius);
   transition:color .15s ease, background .15s ease;
 }
-.main-nav a:hover,.main-nav a.active{color:var(--gold-bright);background:rgba(201,162,39,0.08);}
+.main-nav a:hover,.main-nav a.active{color:var(--gold-bright);background:rgba(63,127,193,0.10);}
 .nav-cta{
   margin-left:14px;padding:10px 20px !important;
   border:1px solid var(--gold);color:var(--gold-bright) !important;
@@ -107,7 +107,7 @@ body{
 }
 .hero::before{
   content:"";position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(201,162,39,0.10), transparent 70%);
+  background:radial-gradient(ellipse 60% 50% at 50% 0%, rgba(63,127,193,0.14), transparent 70%);
   pointer-events:none;
 }
 .eyebrow{
