@@ -54,6 +54,64 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (reduceMotion) return;
 
+  /* custom "target-lock" cursor — desktop pointer devices only */
+  if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    document.body.classList.add('cursor-ready');
+
+    var dot = document.createElement('div');
+    dot.className = 'cursor-dot';
+
+    var frame = document.createElement('div');
+    frame.className = 'cursor-frame';
+    frame.innerHTML =
+      '<span class="cursor-corner tl"></span>' +
+      '<span class="cursor-corner tr"></span>' +
+      '<span class="cursor-corner bl"></span>' +
+      '<span class="cursor-corner br"></span>' +
+      '<span class="cursor-label">LOCKED</span>';
+
+    document.body.appendChild(dot);
+    document.body.appendChild(frame);
+
+    var mouseX = 0, mouseY = 0, frameX = 0, frameY = 0, started = false;
+
+    document.addEventListener('mousemove', function (e) {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      dot.style.transform = 'translate(' + mouseX + 'px,' + mouseY + 'px)';
+      dot.classList.add('active');
+      frame.classList.add('active');
+      if (!started) {
+        started = true;
+        frameX = mouseX;
+        frameY = mouseY;
+        requestAnimationFrame(tick);
+      }
+    });
+
+    document.addEventListener('mouseleave', function () {
+      dot.classList.remove('active');
+      frame.classList.remove('active');
+    });
+
+    function tick() {
+      frameX += (mouseX - frameX) * 0.18;
+      frameY += (mouseY - frameY) * 0.18;
+      frame.style.transform = 'translate(' + frameX + 'px,' + frameY + 'px)';
+      requestAnimationFrame(tick);
+    }
+
+    var hoverTargets = 'a, button, input, textarea, select, .card, .nav-toggle';
+    document.addEventListener('mouseover', function (e) {
+      if (e.target.closest(hoverTargets)) frame.classList.add('hover');
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (e.target.closest(hoverTargets)) frame.classList.remove('hover');
+    });
+    document.addEventListener('mousedown', function () { frame.classList.add('click'); });
+    document.addEventListener('mouseup', function () { frame.classList.remove('click'); });
+  }
+
   /* scroll-reveal: auto-tag common blocks, stagger by position in parent */
   var revealSelectors = [
     'section .section-head',

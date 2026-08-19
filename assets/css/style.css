@@ -29,6 +29,44 @@ html{scroll-behavior:smooth;}
   html{scroll-behavior:auto;}
   *,*::before,*::after{animation-duration:0.001ms !important;animation-iteration-count:1 !important;transition-duration:0.001ms !important;scroll-behavior:auto !important;}
 }
+
+/* ---------- custom "target-lock" cursor ---------- */
+@media (hover:hover) and (pointer:fine){
+  body.cursor-ready,
+  body.cursor-ready a,
+  body.cursor-ready button,
+  body.cursor-ready input,
+  body.cursor-ready textarea,
+  body.cursor-ready select,
+  body.cursor-ready label{cursor:none;}
+}
+.cursor-dot{
+  position:fixed;top:0;left:0;width:5px;height:5px;margin:-2.5px 0 0 -2.5px;
+  border-radius:50%;background:var(--gold-bright);
+  pointer-events:none;z-index:9999;opacity:0;
+  transition:opacity .25s ease,transform .15s ease;
+}
+.cursor-frame{
+  position:fixed;top:0;left:0;width:40px;height:40px;margin:-20px 0 0 -20px;
+  pointer-events:none;z-index:9998;opacity:0;
+  transition:width .25s cubic-bezier(.2,.8,.2,1),height .25s cubic-bezier(.2,.8,.2,1),
+             margin .25s cubic-bezier(.2,.8,.2,1),opacity .25s ease;
+}
+.cursor-dot.active,.cursor-frame.active{opacity:1;}
+.cursor-corner{position:absolute;width:10px;height:10px;border-color:var(--gold);transition:border-color .2s ease;}
+.cursor-corner.tl{top:0;left:0;border-top:1.5px solid;border-left:1.5px solid;}
+.cursor-corner.tr{top:0;right:0;border-top:1.5px solid;border-right:1.5px solid;}
+.cursor-corner.bl{bottom:0;left:0;border-bottom:1.5px solid;border-left:1.5px solid;}
+.cursor-corner.br{bottom:0;right:0;border-bottom:1.5px solid;border-right:1.5px solid;}
+.cursor-frame.hover{width:64px;height:64px;margin:-32px 0 0 -32px;}
+.cursor-frame.hover .cursor-corner{border-color:var(--gold-bright);}
+.cursor-frame.click{width:30px;height:30px;margin:-15px 0 0 -15px;}
+.cursor-label{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  font-size:8px;letter-spacing:1.5px;color:var(--gold-bright);white-space:nowrap;
+  opacity:0;transition:opacity .2s ease;font-family:'Space Grotesk',sans-serif;
+}
+.cursor-frame.hover .cursor-label{opacity:1;}
 body{
   margin:0;
   background:var(--bg);
