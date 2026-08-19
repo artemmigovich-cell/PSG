@@ -1,9 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 56" fill="none">
-  <g>
-    <path d="M28 4 L50 12 V26 C50 39 40 48 28 52 C16 48 6 39 6 26 V12 Z" fill="#0d1117" stroke="#3f7fc1" stroke-width="1.5"/>
-    <path d="M28 9 L45 15.5 V26.5 C45 36.5 37.5 43.5 28 47 C18.5 43.5 11 36.5 11 26.5 V15.5 Z" fill="none" stroke="#3f7fc1" stroke-width="1" opacity="0.55"/>
-    <path d="M20 27 L25.5 32.5 L37 20" stroke="#3f7fc1" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-  </g>
-  <text x="64" y="26" font-family="'Space Grotesk', 'Arial', sans-serif" font-size="19" font-weight="700" letter-spacing="2" fill="#f2f0ea">PSG</text>
-  <text x="64" y="42" font-family="'Space Grotesk', 'Arial', sans-serif" font-size="8.5" font-weight="500" letter-spacing="2.5" fill="#8b9099">PROTECTIVE SECURITY GROUP</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 176" fill="none">
+  <rect x="14" y="6" width="42" height="42" fill="#9CC3E5"/>
+  <rect x="32" y="48" width="42" height="42" fill="#6699CC"/>
+  <rect x="50" y="90" width="42" height="42" fill="#4A7FB5"/>
+
+  <text x="35" y="37" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">P</text>
+  <text x="53" y="79" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">S</text>
+  <text x="71" y="121" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="800" fill="#ffffff" text-anchor="middle">G</text>
+
+  <text x="60" y="37" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="0.5">ROTECTIVE</text>
+  <text x="78" y="79" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="0.5">ECURITY</text>
+  <text x="96" y="121" font-family="'Arial','Helvetica Neue',sans-serif" font-size="30" font-weight="700" fill="#ffffff" letter-spacing="0.5">ROUP</text>
 </svg>

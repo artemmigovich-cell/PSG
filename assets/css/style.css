@@ -58,7 +58,7 @@ body{
   display:flex;align-items:center;justify-content:space-between;
   height:78px;
 }
-.logo img{height:34px;width:auto;}
+.logo img{height:58px;width:auto;}
 .main-nav ul{display:flex;gap:2px;align-items:center;}
 .main-nav a{
   display:block;padding:10px 16px;
