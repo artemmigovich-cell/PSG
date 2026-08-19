@@ -33,12 +33,43 @@ document.addEventListener('DOMContentLoaded', function () {
   /* mobile nav toggle */
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.main-nav');
+  var backdrop = document.querySelector('.main-nav-backdrop');
+
+  function closeNav() {
+    nav.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    if (backdrop) backdrop.classList.remove('open');
+    document.body.classList.remove('nav-locked');
+    nav.querySelectorAll('.has-dropdown.open').forEach(function (li) {
+      li.classList.remove('open');
+      var caret = li.querySelector('.dropdown-caret');
+      if (caret) caret.setAttribute('aria-expanded', 'false');
+    });
+  }
+
   if (toggle && nav) {
     toggle.addEventListener('click', function () {
-      nav.classList.toggle('open');
+      var open = nav.classList.toggle('open');
+      toggle.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      if (backdrop) backdrop.classList.toggle('open', open);
+      document.body.classList.toggle('nav-locked', open);
     });
+    if (backdrop) backdrop.addEventListener('click', closeNav);
+
     nav.querySelectorAll('a').forEach(function (a) {
-      a.addEventListener('click', function () { nav.classList.remove('open'); });
+      a.addEventListener('click', closeNav);
+    });
+
+    /* services dropdown: expandable accordion on mobile, hover on desktop (handled by CSS) */
+    nav.querySelectorAll('.dropdown-caret').forEach(function (caret) {
+      caret.addEventListener('click', function (e) {
+        e.preventDefault();
+        var li = caret.closest('.has-dropdown');
+        var open = li.classList.toggle('open');
+        caret.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
     });
   }
 
@@ -106,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function tick() {
-      frameX += (mouseX - frameX) * 0.18;
-      frameY += (mouseY - frameY) * 0.18;
+      frameX += (mouseX - frameX) * 0.45;
+      frameY += (mouseY - frameY) * 0.45;
       frame.style.transform = 'translate(' + frameX + 'px,' + frameY + 'px)';
       requestAnimationFrame(tick);
     }
